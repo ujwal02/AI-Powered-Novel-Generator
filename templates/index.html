@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-powered Novel Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>AI-powered Novel Generator</h1>
+    <div class="container">
+      <div class="panel">
+  <form id="settings-form">
+    <label for="api-key">API Key:</label>
+    <input type="text" id="api-key" name="api-key" value="" required>
+
+    <button type="submit">Save</button>
+  </form>
+</div>
+
+        <div id="generated-text" class="panel"></div>
+        <div class="panel">
+            <form id="story-form">
+              <label for="title">Title:</label>
+              <input type="text" id="title" name="title" value="{{ title }}" required><br>
+
+              <label for="genre">Genre:</label>
+              <input type="text" id="genre" name="genre" value="{{ genre }}" required><br>
+
+              <label for="characters">Main Characters:</label>
+              <input type="text" id="characters" name="characters" value="{{ characters }}" required><br>
+
+              <label for="plot">Plot Summary:</label>
+              <textarea id="plot" name="plot" required style="height: 100px;">{{ plot }}</textarea><br>
+
+              <label for="prompt">Prompt Input:</label>
+              <textarea id="prompt" name="prompt" required style="height: 100px;">{{ prompt }}</textarea><br>
+
+                <button type="submit">Generate Text</button>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
