@@ -25,7 +25,7 @@ def generate():
 
     num_agents = 3
     refinement_iterations = 2
-    refinement_agent_index = num_agents - 1
+    refinement_agent_index = num_agents - 2
 
     openai.api_key = default_api_key
 
@@ -33,7 +33,7 @@ def generate():
     generated_texts = []
     for i in range(num_agents - 1):
         p = f"{prompt} [Part {i + 1}/{num_agents - 1}]"
-        response = openai.Completion.create(engine="text-davinci-002", prompt=p, max_tokens=150, n=1, stop=None, temperature=0.7)
+        response = openai.Completion.create(engine="text-davinci-002", prompt=p, max_tokens=250, n=1, stop=None, temperature=0.7)
         generated_texts.append(response.choices[0].text.strip())
 
     # Iteratively refine the text
@@ -42,7 +42,7 @@ def generate():
             text_part_1 = generated_texts[i]
             text_part_2 = generated_texts[i + 1] if i + 1 < len(generated_texts) else ""
             gap_prompt = f"Continue the story smoothly between:\n\n{text_part_1}\n\nand\n\n{text_part_2}\n\nRefined transition:"
-            response = openai.Completion.create(engine="text-davinci-002", prompt=gap_prompt, max_tokens=30, n=1, stop=None, temperature=0.7)
+            response = openai.Completion.create(engine="text-davinci-002", prompt=gap_prompt, max_tokens=100, n=1, stop=None, temperature=0.7)
             refined_text = response.choices[0].text.strip()
             generated_texts[i] = text_part_1 + " " + refined_text + " " + text_part_2
 
@@ -53,7 +53,7 @@ def generate():
     editing_response = openai.Completion.create(
         engine="text-davinci-002",
         prompt=editing_prompt,
-        max_tokens=len(combined_text) + 50,  # Allow some extra tokens for edits
+        max_tokens=len(combined_text) + 200,  # Allow some extra tokens for edits
         n=1,
         stop=None,
         temperature=0.5
