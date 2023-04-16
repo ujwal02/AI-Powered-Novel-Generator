@@ -47,7 +47,21 @@ def generate():
             generated_texts[i] = text_part_1 + " " + refined_text + " " + text_part_2
 
     combined_text = ' '.join(generated_texts)
-    formatted_text = formatText(combined_text)
+
+    # Add editing agent
+    editing_prompt = f"Please edit the following text for grammar, punctuation, and overall readability:\n\n{combined_text}\n\nEdited Text:"
+    editing_response = openai.Completion.create(
+        engine="text-davinci-002",
+        prompt=editing_prompt,
+        max_tokens=len(combined_text) + 50,  # Allow some extra tokens for edits
+        n=1,
+        stop=None,
+        temperature=0.5
+    )
+    edited_text = editing_response.choices[0].text.strip()
+
+    # Format edited text
+    formatted_text = formatText(edited_text)
     return jsonify(formatted_text)
 
 def formatText(text):
