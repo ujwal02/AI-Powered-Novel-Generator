@@ -23,5 +23,7 @@ If you want to contribute to this project, feel free to submit a pull request or
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more information.
 
+<<<<<<< HEAD
 Credits
 This project was created by Aaron McGowan. It utilizes the OpenAI API and the Flask web framework.
+>>>>>>> 5b01010247257db6646ec264ffe71d97e8d1bd6e
