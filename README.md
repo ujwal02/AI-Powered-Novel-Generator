@@ -13,7 +13,7 @@ To get started with this project, follow these steps:
 * Run the application by running the command python app.py.
 * Open your web browser and go to http://localhost:5000 to use the application.
 
-##Usage
+## Usage
 
 ### To use the application, follow these steps:
 * Enter the required information in the input fields provided. The input fields include the title, genre, main characters, plot summary, and prompt.
