@@ -23,9 +23,9 @@ def generate():
     prompt = f"Title: {data['title']}\nGenre: {data['genre']}\nCharacters: {data['characters']}\nPlot: {data['plot']}\n\n{data['prompt']}"
     print(f"Prompt: {prompt}")
 
-    num_agents = 3
+    num_agents = 2
     refinement_iterations = 2
-    refinement_agent_index = num_agents - 2
+    refinement_agent_index = num_agents - 1
 
     openai.api_key = default_api_key
 
@@ -53,7 +53,7 @@ def generate():
     editing_response = openai.Completion.create(
         engine="text-davinci-002",
         prompt=editing_prompt,
-        max_tokens=len(combined_text) + 200,  # Allow some extra tokens for edits
+        max_tokens=len(combined_text) + 100,  # Allow some extra tokens for edits
         n=1,
         stop=None,
         temperature=0.5
