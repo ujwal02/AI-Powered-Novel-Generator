@@ -1,6 +1,9 @@
 # AI-Powered Novel Generator
 This is a web application that uses OpenAI's GPT-3 API to generate novel text based on user inputs. It allows users to input information such as the title, genre, main characters, and plot summary, and generates a short text prompt based on the provided inputs. The user can then generate multiple text outputs using the generated prompt, which can be used to help them write their own novel.
 
+# Warning 
+The current build is slow and buggy.
+
 ## Getting Started
 To get started with this project, follow these steps:
 
