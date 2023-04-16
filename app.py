@@ -23,7 +23,7 @@ def generate():
     prompt = f"Title: {data['title']}\nGenre: {data['genre']}\nCharacters: {data['characters']}\nPlot: {data['plot']}\n\n{data['prompt']}"
     print(f"Prompt: {prompt}")
 
-    num_agents = 3
+    num_agents = 2
     prompts = [f"{prompt} [Part {i+1}/{num_agents}]" for i in range(num_agents)]
 
     openai.api_key = default_api_key
