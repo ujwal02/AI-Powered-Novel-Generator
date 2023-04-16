@@ -8,13 +8,14 @@ The current build is slow and buggy.
 ### To get started with this project, follow these steps:
 * Clone this repository to your local machine.
 * Install the required dependencies by running the command pip install -r requirements.txt.
-* Sign up for an API key from OpenAI and replace the default API key in app.py with your own key.
 * Run the application by running the command python app.py.
 * Open your web browser and go to http://localhost:5000 to use the application.
+* Sign up for an API key from [OpenAI](https://openai.com/).
 
 ## Usage
 
 ### To use the application, follow these steps:
+* Input your OpenAI API key.
 * Enter the required information in the input fields provided. The input fields include the title, genre, main characters, plot summary, and prompt.
 * Click on the "Generate Text" button to generate the novel text.
 * The generated text will be displayed in the panel below the input fields.
@@ -24,7 +25,6 @@ If you want to contribute to this project, feel free to submit a pull request or
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more information.
-
 
 ## Credits
 This project was created by Aaron McGowan [HellfunDigital](https://github.com/HellfunDigital). It utilizes the [OpenAI](https://openai.com/) API and the [Flask](https://flask.palletsprojects.com/) web framework.
