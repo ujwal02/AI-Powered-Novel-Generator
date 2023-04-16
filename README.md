@@ -27,4 +27,4 @@ If you want to contribute to this project, feel free to submit a pull request or
 This project is licensed under the MIT License. See the LICENSE file for more information.
 
 ## Credits
-This project was created by Aaron McGowan [HellfunDigital](https://github.com/HellfunDigital). It utilizes the [OpenAI](https://openai.com/) API and the [Flask](https://flask.palletsprojects.com/) web framework.
+This project was created by [HellfunDigital](https://github.com/HellfunDigital). It utilizes the [OpenAI](https://openai.com/) API and the [Flask](https://flask.palletsprojects.com/) web framework.
