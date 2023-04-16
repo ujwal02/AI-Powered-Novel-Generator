@@ -20,7 +20,13 @@ def save_api_key():
 @app.route("/generate", methods=["POST"])
 def generate():
     data = request.get_json()
-    prompt = f"Title: {data['title']}\nGenre: {data['genre']}\nCharacters: {data['characters']}\nPlot: {data['plot']}\n\n{data['prompt']}"
+    prompt = (f"You are a {data['genre']} author. Your task is to write a {data['genre']} story in a vivid and intriguing language, incorporating setting details, "
+              f"character descriptions, and background information. Develop the plot with engaging dialogue, maintain a consistent tone, and vary the pacing to build and release tension.\n\n"
+              f"Title: {data['title']}\n"
+              f"Genre: {data['genre']}\n"
+              f"Characters: {data['characters']}\n"
+              f"Plot: {data['plot']}\n\n"
+              f"{data['prompt']}")
     print(f"Prompt: {prompt}")
 
     num_agents = 2
