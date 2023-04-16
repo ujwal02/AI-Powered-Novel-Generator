@@ -5,9 +5,8 @@ This is a web application that uses OpenAI's GPT-3 API to generate novel text ba
 The current build is slow and buggy.
 
 ## Getting Started
-To get started with this project, follow these steps:
-
-## Clone this repository to your local machine.
+### To get started with this project, follow these steps:
+* Clone this repository to your local machine.
 * Install the required dependencies by running the command pip install -r requirements.txt.
 * Sign up for an API key from OpenAI and replace the default API key in app.py with your own key.
 * Run the application by running the command python app.py.
